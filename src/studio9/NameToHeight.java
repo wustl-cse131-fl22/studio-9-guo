@@ -17,11 +17,46 @@ public class NameToHeight {
 	 * and output the results. Be sure to handle the case where the map does not
 	 * contain a specified name.
 	 */
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
+		Map<String,Integer> Info = new HashMap<>();
 		Scanner in = new Scanner(System.in);
+		System.out.println("How many people?");
+		int numPeople = in.nextInt();
+		for (int i = 0; i < numPeople; i++) {
+			System.out.println("What's your name?:");
+			String name = in.next();
+			System.out.println("What's your height (in cm)?:");
+			int height = in.nextInt();
+			Info.put (name, height);
+		}
+		System.out.println("The name you are trying to look at:");
+		String name = in.next();
+		while (!name.equals("quit")) {
+			if (Info.containsKey(name)) {
+				System.out.println(Info.get(name));
+			} else {
+				System.out.println("Invalid name!");
+			}
+			
+			
+			System.out.println("The name you are trying to look at:");
+			name = in.next();
+			
+		}
 
 		// FIXME
-		throw new NotYetImplementedException();
+//		System.out.println("What's your name?:");
+//		String name = in.next();
+//		System.out.println("What's your height (in )?:");
+//		int height = in.nextInt();
+//		Map<String, Integer> temp = new HashMap<>();
+//		temp.put(name, height);
 
 	}
 }
